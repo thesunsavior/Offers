@@ -1,22 +1,22 @@
 import 'dart:convert';
-
-import '../model/Offer_util.dart';
-import '../model/Offers.dart';
 import 'dart:math';
+
+import '../model/Merchant.dart';
+import '../model/Offer.dart';
 
 // generate json string to test
 class JsonGenerator {
   int number_of_offer;
-  List<DateTime> valid_to;
+  List<DateTime> valid_to; // valid date of each offer
   List<int> number_of_merchant;
-  List<int> offer_categories;
-  List<Merchant> input_merchants = List.empty(growable: true);
+  List<int> offer_categories; // category of each offer
+  List<Merchant> input_merchants = List.empty(growable: true); // merchant to be included in generated offer
 
   JsonGenerator(this.number_of_offer, this.number_of_merchant, this.valid_to,
       [this.offer_categories = const <int>[],
         this.input_merchants = const <Merchant>[]]);
 
-  String jsonGenerate() {
+  String getRequest() {
     var offers = List<Offer>.empty(growable: true);
 
     var merchant_index = 0;

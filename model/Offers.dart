@@ -1,5 +1,6 @@
 import 'dart:convert';
-import 'Offer_util.dart';
+
+import 'Offer.dart';
 
 class Offers {
   late final List<Offer> _offers;
@@ -41,15 +42,10 @@ class Offers {
         }
       }
 
-    // Map<String, dynamic> response = {
-    //   'Offers': top_offers.map((offer) => offer.toJson()).toList()
-    // };
-    //
-    // return jsonEncode(response);
-
     return top_offers;
   }
 
+  // generate json response
   String getResponse () {
     var top_offers = chooseBestOffers();
     Map<String, dynamic> response = {
