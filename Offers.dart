@@ -6,7 +6,7 @@ class Offers {
   late final List<Offer> _offers;
   DateTime check_in;
 
-  Offers (String json, {required this.check_in}){
+  Offers ({required String json, required this.check_in}){
 
     // parse json string
     Map<String, dynamic> offers_map = jsonDecode(json);

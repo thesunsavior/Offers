@@ -22,7 +22,7 @@ void main() {
     String json = generator.getRequest();
     print(json);
 
-    var offers = Offers(json, check_in: DateTime.parse('2023-10-11'));
+    var offers = Offers(json:json, check_in: DateTime.parse('2023-10-11'));
     var res =offers.chooseBestOffers();
     expect (res.length,0);
   });
@@ -37,7 +37,7 @@ void main() {
     String json = generator.getRequest();
     print(json);
 
-    var offers = Offers(json, check_in: DateTime.parse('2023-04-29'));
+    var offers = Offers(json:json, check_in: DateTime.parse('2023-04-29'));
     var res =offers.chooseBestOffers();
     expect (res.length,0);
   });
@@ -52,7 +52,7 @@ void main() {
     String json = generator.getRequest();
     print(json);
 
-    var offers = Offers(json, check_in: DateTime.parse('2023-03-29'));
+    var offers = Offers(json:json, check_in: DateTime.parse('2023-03-29'));
     var res =offers.chooseBestOffers();
     expect (res.length,0);
   });
@@ -67,7 +67,7 @@ void main() {
     String json = generator.getRequest();
     print(json);
 
-    var offers = Offers(json, check_in: DateTime.parse('2022-04-29'));
+    var offers = Offers(json:json, check_in: DateTime.parse('2022-04-29'));
     var res =offers.chooseBestOffers();
     expect (res.length,1);
     expect (res[0].category,1);
@@ -89,7 +89,7 @@ void main() {
     String json = generator.getRequest();
     print(json);
 
-    var offers = Offers(json, check_in: DateTime.parse('2022-04-29'));
+    var offers = Offers(json:json, check_in: DateTime.parse('2022-04-29'));
     var res =offers.chooseBestOffers();
     expect (res.length,1);
     expect(res[0].merchants[0].distance, 0.2);
@@ -115,7 +115,7 @@ void main() {
     String json = generator.getRequest();
     print(json);
 
-    var offers = Offers(json, check_in: DateTime.parse('2022-04-29'));
+    var offers = Offers(json:json, check_in: DateTime.parse('2022-04-29'));
     var res =offers.chooseBestOffers();
     expect (res.length,2);
     expect(res[0].merchants[0].distance, 0.2);
@@ -147,7 +147,7 @@ void main() {
     String json = generator.getRequest();
     print(json);
 
-    var offers = Offers(json, check_in: DateTime.parse('2022-04-29'));
+    var offers = Offers(json:json, check_in: DateTime.parse('2022-04-29'));
     var res =offers.chooseBestOffers();
     expect (res.length,2);
     expect(res[0].merchants[0].distance, 0.2);
