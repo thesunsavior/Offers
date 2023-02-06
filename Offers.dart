@@ -1,10 +1,11 @@
 import 'dart:convert';
 
-import 'Offer.dart';
+import 'model/Offer.dart';
 
 class Offers {
   late final List<Offer> _offers;
   DateTime check_in;
+
   Offers (String json, {required this.check_in}){
 
     // parse json string
@@ -17,6 +18,7 @@ class Offers {
   List<Offer> chooseBestOffers() {
     // Offer to return in response
     var top_offers = List<Offer>.empty(growable: true);
+
     // filter offer to response
     for (var offer in _offers)
       if (offer.isValid(check_in)) {

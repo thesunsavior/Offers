@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import '../model/Offers.dart';
+import '../Offers.dart';
 import '../model/Merchant.dart';
 import '../utils/Offers_test_util.dart';
 
@@ -14,6 +14,7 @@ void main() {
   // });
 
   // unit test aims for branch coverage
+
   test("no offer",(){
     var generator = JsonGenerator(0, [], []);
 
